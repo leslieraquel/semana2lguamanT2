@@ -1,4 +1,6 @@
-﻿namespace semana2lguamanT2
+﻿using semana2lguamanT2.Views;
+
+namespace semana2lguamanT2
 {
     public partial class App : Application
     {
@@ -9,7 +11,7 @@
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            return new Window(new NavigationPage(new login()));
         }
     }
 }

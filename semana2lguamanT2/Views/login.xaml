@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="semana2lguamanT2.Views.login"
+             Title="login">
+    <VerticalStackLayout
+    Spacing="25"
+    Padding="10"
+    >
+        <Label 
+        Text="Ingreso al sistema"
+        VerticalOptions="Center" 
+        HorizontalOptions="Center"
+        FontSize="24"/>
+
+        <Image
+        Source="dotnet_bot.png"
+        HeightRequest="120"
+        HorizontalOptions="Center"/>
+
+        <Grid RowSpacing="10"
+          ColumnSpacing="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Usuario:" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Entry x:Name="txtUsuario" Placeholder="Ingrese el usuario" Grid.Row="0" Grid.Column="1" VerticalOptions="Center"/>
+            <Label Text="Contrasenia" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="1" Grid.Column="0"/>
+            <Entry x:Name="txtContrasenia" Placeholder="Ingrese Contrasenia" IsPassword="True" Grid.Row="1" Grid.Column="1"/>
+            <Button x:Name="btnIniciar" Text="INICIAR SESION" Clicked="btnIniciar_Clicked" Grid.Row="2" Grid.Column="0"/>
+
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

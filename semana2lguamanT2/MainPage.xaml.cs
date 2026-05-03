@@ -13,8 +13,15 @@
         {
             try
             {
-                string nombre = txtNombre.Text;
+                string nombre = pkCompaneros.ToString();
 
+                if (pkCompaneros.SelectedItem == null)
+                {
+                    await DisplayAlert("Error", "Seleccione un compañero", "OK");
+                    return;
+                }
+
+                string companero = pkCompaneros.SelectedItem.ToString();
                 double seg1 = Convert.ToDouble(txtSeguimiento1.Text);
                 double ex1 = Convert.ToDouble(txtExamen1.Text);
                 double seg2 = Convert.ToDouble(txtSeguimiento2.Text);
@@ -47,7 +54,7 @@
                     estado = "REPROBADO";
 
                 await DisplayAlert("Resultado",
-                    "Nombre: " + nombre + "\n" +
+                    "estudiante: " + companero + "\n" +
                     "Fecha: " + dpFecha.Date.ToShortDateString() + "\n" +
                     "Nota Parcial 1: " + parcial1.ToString("0.00") + "\n" +
                     "Nota Parcial 2: " + parcial2.ToString("0.00") + "\n" +
